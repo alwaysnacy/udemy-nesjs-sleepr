@@ -11,6 +11,9 @@ steps:
       ]
   - name: 'grc.io/cloud-builders/docker'
     args: 
+      ['push', 'asia-southeast1-docker.pkg.dev/sleepr-402506/notifications/production']
+  - name: 'grc.io/cloud-builders/docker'
+    args: 
       [
         'build',
         '-t',
@@ -19,6 +22,9 @@ steps:
         'apps/reservations/Dockerfile',
         '.'
       ]
+  - name: 'grc.io/cloud-builders/docker'
+    args: 
+      ['push', 'asia-southeast1-docker.pkg.dev/sleepr-402506/reservations/production']
   - name: 'grc.io/cloud-builders/docker'
     args: 
       [
@@ -31,6 +37,9 @@ steps:
       ]
   - name: 'grc.io/cloud-builders/docker'
     args: 
+      ['push', 'asia-southeast1-docker.pkg.dev/sleepr-402506/payments/production']
+  - name: 'grc.io/cloud-builders/docker'
+    args: 
       [
         'build',
         '-t',
@@ -39,3 +48,6 @@ steps:
         'apps/auth/Dockerfile',
         '.'
       ]
+  - name: 'grc.io/cloud-builders/docker'
+    args: 
+      ['push', 'asia-southeast1-docker.pkg.dev/sleepr-402506/auth/production']
